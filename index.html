@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Juros simples</title>
+        <title>Calculadora de juros simples</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -13,58 +13,37 @@
         </header>
         <hr>
         <main>
-            <article class="about">
-                <div class="btn-container">
-                    <button class="tab-btn active" data-id="mensal" style="border-top-left-radius: 0.6em;">Mensal</button>
-                    <button class="tab-btn" data-id="diario">Diário</button>
-                    <button class="tab-btn" data-id="trimestral">Trimestral</button>
-                    <button class="tab-btn" data-id="anual" style="border-top-right-radius: 0.6em;">Anual</button>
-                  </div> <br>
-                <div class="content active" id="mensal">
-                    <h2>Juros Mensal</h2> <br>
-                    <label for="capitalm">Capital: </label> <br> <br>
-                    <input type="number" name="capitalm" placeholder="Digite aqui o Capital" id="capitalm" min="0"> <br> <br>
-                    <label for="taxam">Taxa : </label> <br><br>
-                    <input type="number" name="taxam" placeholder="Digite aqui a Taxa" id="taxam" min="0"> <br> <br>
-                    <label for="tempom">Tempo: </label><br><br>
-                    <input type="number" name="tempom" placeholder="Digite aqui o Tempo" id="tempom" min="0"> <br> <br>
-                    <input type="button" onclick="envioM()" value="Enviar" class="btn-submit-form"> <br> <br>
-                    <div id="res"></div> <br>
+            <section class="calculate-sect">
+                <h3>Calculadora de juros simples</h3>
+                <div class="input-datas">
+                    <label for="capital">Capital Incial: </label>
+                    <div class="input-capital">
+                        <span>R$</span>
+                        <input type="number" class="capital">
+                    </div>
+                    <label for="fee">Taxa de Juros: </label>
+                    <div class="input-fee">
+                        <span>&percnt;</span>
+                        <input type="number" class="fee">
+                        <select class="select-fee">
+                            <option value="mensal" class="opts-fee">Mensal</option>
+                            <option value="anual" class="opts-fee">Anual</option>
+                        </select>
+                    </div>
+                    <label for="period">Período: </label>
+                    <div class="input-period">
+                        <input type="number" class="period">
+                        <select class="select-period">
+                            <option value="meses" class="opts-period">Meses</option>
+                            <option value="anos" class="opts-period">Anos</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="content" id="diario">
-                    <h2>Juros Diário</h2> <br>
-                    <label for="capitald">Capital: </label> <br><br>
-                    <input type="number" name="capitald" placeholder="Digite aqui o Capital" id="capitald" min="0"> <br> <br>
-                    <label for="taxad">Taxa : </label> <br><br>
-                    <input type="number" name="taxad" placeholder="Digite aqui a Taxa" id="taxad" min="0"> <br> <br>
-                    <label for="tempod">Tempo: </label> <br><br>
-                    <input type="number" name="tempod" placeholder="Digite aqui o Tempo" id="tempod" min="0"> <br> <br>
-                    <input type="button" onclick="envioD()" value="Enviar" class="btn-submit-form"> <br> <br>
-                    <div id="res2"></div> <br>
+                <div class="calc-button">
+                    <button class="btn-calc">Enviar</button>
                 </div>
-                <div class="content" id="trimestral">
-                    <h2>Juros Trimestral</h2> <br>
-                    <label for="capitalt">Capital: </label> <br><br>
-                    <input type="number" name="capitalt" placeholder="Digite aqui o Capital" id="capitalt" min="0"> <br> <br>
-                    <label for="taxat">Taxa : </label> <br><br>
-                    <input type="number" name="taxat" placeholder="Digite aqui a Taxa" id="taxat" min="0"> <br> <br>
-                    <label for="tempot">Tempo: </label> <br><br>
-                    <input type="number" name="tempot" placeholder="Digite aqui o Tempo" id="tempot" min="0"> <br> <br>
-                    <input type="button" onclick="envioT()" value="Enviar" class="btn-submit-form"> <br> <br>
-                    <div id="res3"></div> <br>
-                </div>
-                <div class="content" id="anual">
-                    <h2>Juros Anual</h2> <br>
-                    <label for="capitalA">Capital: </label> <br><br>
-                    <input type="number" name="capitalA" placeholder="Digite aqui o Capital" id="capitalA" min="0"> <br> <br>
-                    <label for="taxaA">Taxa : </label> <br><br>
-                    <input type="number" name="taxaA" placeholder="Digite aqui a Taxa" id="taxaA" min="0"> <br> <br>
-                    <label for="tempoA">Tempo: </label> <br><br>
-                    <input type="number" name="tempoA" placeholder="Digite aqui o Tempo" id="tempoA" min="0"> <br> <br>
-                    <input type="button" onclick="envioA()" value="Enviar" class="btn-submit-form"> <br> <br>
-                    <div id="res4"></div> <br>
-                </div>
-            </article>
+                <div id="res"></div>
+            </section>
         </main>
 
         <script src="script.js"></script>
